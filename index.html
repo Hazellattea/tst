@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Artist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="portfolio">
+    <div class="card" onclick="openModal(0)">
+      <img src="images/poster1.jpg" alt="Poster Eksperimen Warna">
+      <div class="card-content">
+        <h3>🎨 Poster Eksperimen Warna</h3>
+      </div>
+    </div>
+    <div class="card" onclick="openModal(1)">
+      <img src="images/logo1.png" alt="Logo Coffeehouse">
+      <div class="card-content">
+        <h3>☕ Logo Coffeehouse</h3>
+      </div>
+    </div>
+    <div class="card" onclick="openModal(2)">
+      <img src="images/album1.jpg" alt="Sampul Album Indie">
+      <div class="card-content">
+        <h3>🎧 Sampul Album Indie</h3>
+      </div>
+    </div>
+  </div>
+<div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="modalImage" src="" alt="">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <button onclick="closeModal()">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    const data = [
+      {
+        title: "Poster Eksperimen Warna",
+        image: "images/poster1.jpg",
+        description: "Eksplorasi palet warna untuk poster musik elektronik."
+      },
+      {
+        title: "Logo Coffeehouse",
+        image: "images/logo1.png",
+        description: "Desain logo minimalis untuk brand kopi lokal."
+      },
+      {
+        title: "Sampul Album Indie",
+        image: "images/album1.jpg",
+        description: "Visual art untuk rilisan album indie pop."
+      }
+    ];
+
+    function openModal(index) {
+      document.getElementById("modalImage").src = data[index].image;
+      document.getElementById("modalTitle").innerText = data[index].title;
+      document.getElementById("modalDesc").innerText = data[index].description;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
