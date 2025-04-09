@@ -24,7 +24,7 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hi, I'm [Your Name], a passionate artist creating digital and traditional art. Welcome to my portfolio!</p>
+            <p>Hi, I'm [Your Name], a passionate artist creating digital and traditional art. Welcome to my portfolio! Explore my works below and get in touch if you want to collaborate or commission artwork.</p>
         </div>
     </section>
 
@@ -32,11 +32,11 @@
         <div class="container">
             <h2>Art Gallery</h2>
             <div class="gallery-grid">
-                <div class="art-item">
+                <div class="art-item" onclick="showModal('art1')">
                     <img src="path-to-your-art-image1.jpg" alt="Artwork 1">
                     <p>Artwork Title 1</p>
                 </div>
-                <div class="art-item">
+                <div class="art-item" onclick="showModal('art2')">
                     <img src="path-to-your-art-image2.jpg" alt="Artwork 2">
                     <p>Artwork Title 2</p>
                 </div>
@@ -64,10 +64,20 @@
         </div>
     </section>
 
+    <!-- Modal for larger image view -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Artwork">
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 [Your Name]. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
