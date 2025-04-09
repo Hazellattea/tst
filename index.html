@@ -1,174 +1,73 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<style>
-  body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  padding: 40px;
-}
-
-.card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 16px;
-}
-
-.card-content h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.modal-content {
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  animation: popIn 0.3s ease;
-}
-
-.modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 16px;
-}
-
-.modal-content h2 {
-  margin: 0 0 10px;
-  font-size: 22px;
-}
-
-.modal-content p {
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.modal-content button {
-  padding: 10px 16px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.modal-content button:hover {
-  background-color: #555;
-}
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-</style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Artist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Artist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="portfolio">
-    <div class="card" onclick="openModal(0)">
-      <img src="images/poster1.jpg" alt="Poster Eksperimen Warna">
-      <div class="card-content">
-        <h3>🎨 Poster Eksperimen Warna</h3>
-      </div>
-    </div>
-    <div class="card" onclick="openModal(1)">
-      <img src="images/logo1.png" alt="Logo Coffeehouse">
-      <div class="card-content">
-        <h3>☕ Logo Coffeehouse</h3>
-      </div>
-    </div>
-    <div class="card" onclick="openModal(2)">
-      <img src="images/album1.jpg" alt="Sampul Album Indie">
-      <div class="card-content">
-        <h3>🎧 Sampul Album Indie</h3>
-      </div>
-    </div>
-  </div>
-<div id="modal" class="modal" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <img id="modalImage" src="" alt="">
-      <h2 id="modalTitle"></h2>
-      <p id="modalDesc"></p>
-      <button onclick="closeModal()">Tutup</button>
-    </div>
-  </div>
+    <header>
+        <div class="container">
+            <h1 class="logo">My Art Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <script>
-    const data = [
-      {
-        title: "Poster Eksperimen Warna",
-        image: "images/poster1.jpg",
-        description: "Eksplorasi palet warna untuk poster musik elektronik."
-      },
-      {
-        title: "Logo Coffeehouse",
-        image: "images/logo1.png",
-        description: "Desain logo minimalis untuk brand kopi lokal."
-      },
-      {
-        title: "Sampul Album Indie",
-        image: "images/album1.jpg",
-        description: "Visual art untuk rilisan album indie pop."
-      }
-    ];
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I'm [Your Name], a passionate artist creating digital and traditional art. Welcome to my portfolio!</p>
+        </div>
+    </section>
 
-    function openModal(index) {
-      document.getElementById("modalImage").src = data[index].image;
-      document.getElementById("modalTitle").innerText = data[index].title;
-      document.getElementById("modalDesc").innerText = data[index].description;
-      document.getElementById("modal").style.display = "flex";
-    }
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Art Gallery</h2>
+            <div class="gallery-grid">
+                <div class="art-item">
+                    <img src="path-to-your-art-image1.jpg" alt="Artwork 1">
+                    <p>Artwork Title 1</p>
+                </div>
+                <div class="art-item">
+                    <img src="path-to-your-art-image2.jpg" alt="Artwork 2">
+                    <p>Artwork Title 2</p>
+                </div>
+                <!-- Add more artwork items here -->
+            </div>
+        </div>
+    </section>
 
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you want to commission art or get in touch, feel free to contact me!</p>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
