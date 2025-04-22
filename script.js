@@ -5,10 +5,13 @@ function showModal(artId) {
 
     // Set the source of the modal image based on the artwork clicked
     if (artId === 'art1') {
-        modalImage.src = 'path-to-your-art-image1.jpg';
+        modalImage.src = 'ai hoshino.jpg';
     } else if (artId === 'art2') {
-        modalImage.src = 'path-to-your-art-image2.jpg';
+        modalImage.src = 'tomasalpaedisong.jpg';
+    } else if (artId === 'art3') {
+        modalImage.src = 'harassment is not a compliment.jpg';
     }
+    // Tambahkan artwork lain kalau ada
 
     modal.style.display = "block";
 }
