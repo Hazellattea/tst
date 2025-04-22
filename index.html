@@ -1,83 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Artist Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Artist - Michelle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">My Art Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hi, I'm [Your Name], a passionate artist creating digital and traditional art. Welcome to my portfolio! Explore my works below and get in touch if you want to collaborate or commission artwork.</p>
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2>Art Gallery</h2>
-            <div class="gallery-grid">
-                <div class="art-item" onclick="showModal('art1')">
-                    <img src="path-to-your-art-image1.jpg" alt="Artwork 1">
-                    <p>Artwork Title 1</p>
-                </div>
-                <div class="art-item" onclick="showModal('art2')">
-                    <img src="path-to-your-art-image2.jpg" alt="Artwork 2">
-                    <p>Artwork Title 2</p>
-                </div>
-                <!-- Add more artwork items here -->
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>If you want to commission art or get in touch, feel free to contact me!</p>
-            <form action="#" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Modal for larger image view -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Artwork">
-        </div>
+  <header>
+    <div class="container">
+      <h1 class="logo">Michelle's Art Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hi, I am Michelle, an Artist and Illustrator from Indonesia passionate about drawing. I specialize in illustration, exploring diverse styles to enhance my skills.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul>
+        <li>Clip Studio Paint</li>
+        <li>Video Editing</li>
+        <li>Animation</li>
+        <li>Photoshop</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2>Art Gallery</h2>
+      <div class="portfolio">
+        <div class="card" onclick="openModal(0)">
+          <img src="ai hoshino.jpg" alt="Artwork 1">
+          <div class="card-content"><h3>Artwork 1</h3></div>
         </div>
-    </footer>
+        <div class="card" onclick="openModal(1)">
+          <img src="tomasalpaedisong.jpg" alt="Artwork 2">
+          <div class="card-content"><h3>Artwork 2</h3></div>
+        </div>
+        <div class="card" onclick="openModal(2)">
+          <img src="harassment is not a compliment.jpg" alt="Artwork 3">
+          <div class="card-content"><h3>Artwork 3</h3></div>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <img id="modalImage" src="" alt="">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+          <button onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out through my social media or email!</p>
+      <p>Email: <a href="mailto:michelle@example.com">michelle@example.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></p>
+    </div>
+  </section>
+
+  <script>
+    const data = [
+      { title: "Artwork 1", image: "ai hoshino.jpg", description: "It took me ages to draw this." },
+      { title: "Artwork 2", image: "tomasalpaedisong.jpg", description: "Still trying to improve on realism." },
+      { title: "Artwork 3", image: "harassment is not a compliment.jpg", description: "Schoolwork novel cover." }
+    ];
+
+    function openModal(index) {
+      document.getElementById("modalImage").src = data[index].image;
+      document.getElementById("modalTitle").innerText = data[index].title;
+      document.getElementById("modalDesc").innerText = data[index].description;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
