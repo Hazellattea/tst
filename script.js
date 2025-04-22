@@ -1,30 +1,36 @@
-// JavaScript for Modal functionality
-function showModal(artId) {
-    var modal = document.getElementById('modal');
-    var modalImage = document.getElementById('modal-image');
+const data = [
+  { title: "Karya 1", image: "ai hoshino.jpg", description: "Perlu waktu lama untuk menggambar ini" },
+  { title: "Karya 2", image: "tomasalpaedisong.jpg", description: "Masih belajar realisme" },
+  { title: "Karya 3", image: "harassment is not a compliment.jpg", description: "Untuk sampul novel tugas sekolah" },
+  { title: "Karya 4", image: "micia1.jpg", description: "Dibuat untuk sahabatku" },
+  { title: "Karya 5", image: "yoimiya.jpg", description: "Karya lama" },
+  { title: "Karya 6", image: "harris hbd2.jpg", description: "Dibuat untuk teman" },
+  { title: "Karya 7", image: "COMMS 3 amore bonus.jpg", description: "Komisi pertama saya" },
+  { title: "Karya 8", image: "spotifycover.jpg", description: "Cover playlist pribadi" },
+];
 
-    // Set the source of the modal image based on the artwork clicked
-    if (artId === 'art1') {
-        modalImage.src = 'ai hoshino.jpg';
-    } else if (artId === 'art2') {
-        modalImage.src = 'tomasalpaedisong.jpg';
-    } else if (artId === 'art3') {
-        modalImage.src = 'harassment is not a compliment.jpg';
-    }
-    // Tambahkan artwork lain kalau ada
-
-    modal.style.display = "block";
+function openModal(index) {
+  document.getElementById("modalImage").src = data[index].image;
+  document.getElementById("modalTitle").innerText = data[index].title;
+  document.getElementById("modalDesc").innerText = data[index].description;
+  document.getElementById("modal").style.display = "flex";
 }
 
 function closeModal() {
-    var modal = document.getElementById('modal');
-    modal.style.display = "none";
+  document.getElementById("modal").style.display = "none";
 }
 
-// Close the modal if clicked outside of the modal content
+// Tutup modal jika klik di luar modal-content
 window.onclick = function(event) {
-    var modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+  const modal = document.getElementById("modal");
+  if (event.target === modal) {
+    closeModal();
+  }
 }
+
+// Tambahan: tekan ESC untuk tutup modal
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
