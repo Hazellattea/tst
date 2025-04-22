@@ -45,15 +45,15 @@
     <div class="container">
       <h2>Art Gallery</h2>
       <div class="portfolio">
-        <div class="card" onclick="openModal(0)">
+        <div class="card" onclick="showModal('art1')">
           <img src="ai hoshino.jpg" alt="Artwork 1">
           <div class="card-content"><h3>Artwork 1</h3></div>
         </div>
-        <div class="card" onclick="openModal(1)">
+        <div class="card" onclick="showModal('art2')">
           <img src="tomasalpaedisong.jpg" alt="Artwork 2">
           <div class="card-content"><h3>Artwork 2</h3></div>
         </div>
-        <div class="card" onclick="openModal(2)">
+        <div class="card" onclick="showModal('art3')">
           <img src="harassment is not a compliment.jpg" alt="Artwork 3">
           <div class="card-content"><h3>Artwork 3</h3></div>
         </div>
@@ -97,5 +97,6 @@
       document.getElementById("modal").style.display = "none";
     }
   </script>
+<script src="script.js"></script>
 </body>
 </html>
