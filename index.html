@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Artist - Michelle</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Portofolio Michelle - 243303651403</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">Michelle's Art Portfolio</h1>
+      <h1 class="logo">Portofolio Seni Michelle</h1>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">Tentang Saya</a></li>
+          <li><a href="#skills">Keahlian</a></li>
+          <li><a href="#gallery">Galeri</a></li>
         </ul>
       </nav>
     </div>
@@ -24,66 +22,100 @@
 
   <section id="about">
     <div class="container">
-      <h2>About Me</h2>
-      <p>Hi, I am Michelle, an Artist and Illustrator from Indonesia passionate about drawing. I specialize in illustration, exploring diverse styles to enhance my skills.</p>
+      <h2>Tentang Saya</h2>
+      <p>Halo, saya Michelle, seorang seniman dan ilustrator dari Indonesia yang sangat mencintai dunia menggambar. Saya mengkhususkan diri pada ilustrasi, namun saya juga senang mengeksplorasi berbagai gaya dan bentuk seni untuk memperluas wawasan dan meningkatkan kemampuan artistik saya.</p>
+      <p>NIM: 243303651403</p>
     </div>
   </section>
 
   <section id="skills">
     <div class="container">
-      <h2>Skills</h2>
+      <h2>Keahlian</h2>
       <ul>
         <li>Clip Studio Paint</li>
-        <li>Video Editing</li>
-        <li>Animation</li>
+        <li>Editing Video</li>
+        <li>Animasi</li>
         <li>Photoshop</li>
       </ul>
     </div>
   </section>
 
-  <section id="gallery">
+  <section id="gallery" class="gallery">
     <div class="container">
-      <h2>Art Gallery</h2>
+      <h2>Galeri Karya</h2>
       <div class="portfolio">
-        <div class="card" onclick="showModal('art1')">
-          <img src="ai hoshino.jpg" alt="Artwork 1">
-          <div class="card-content"><h3>Artwork 1</h3></div>
+        <!-- Menggunakan loop manual, bisa dibuat dinamis dengan JS framework -->
+        <!-- Setiap card mewakili satu karya -->
+        <div class="card" onclick="openModal(0)">
+          <img src="ai hoshino.jpg">
+          <div class="card-content">
+            <h3>Karya 1</h3>
+          </div>
         </div>
-        <div class="card" onclick="showModal('art2')">
-          <img src="tomasalpaedisong.jpg" alt="Artwork 2">
-          <div class="card-content"><h3>Artwork 2</h3></div>
+        <div class="card" onclick="openModal(1)">
+          <img src="tomasalpaedisong.jpg">
+          <div class="card-content">
+            <h3>Karya 2</h3>
+          </div>
         </div>
-        <div class="card" onclick="showModal('art3')">
-          <img src="harassment is not a compliment.jpg" alt="Artwork 3">
-          <div class="card-content"><h3>Artwork 3</h3></div>
+        <div class="card" onclick="openModal(2)">
+          <img src="harassment is not a compliment.jpg">
+          <div class="card-content">
+            <h3>Karya 3</h3>
+          </div>
+        </div>
+        <div class="card" onclick="openModal(3)">
+          <img src="micia1.jpg">
+          <div class="card-content">
+            <h3>Karya 4</h3>
+          </div>
+        </div>
+        <div class="card" onclick="openModal(4)">
+          <img src="yoimiya.jpg">
+          <div class="card-content">
+            <h3>Karya 5</h3>
+          </div>
+        </div>
+        <div class="card" onclick="openModal(5)">
+          <img src="harris hbd2.jpg">
+          <div class="card-content">
+            <h3>Karya 6</h3>
+          </div>
+        </div>
+        <div class="card" onclick="openModal(6)">
+          <img src="COMMS 3 amore bonus.jpg">
+          <div class="card-content">
+            <h3>Karya 7</h3>
+          </div>
+        </div>
+        <div class="card" onclick="openModal(7)">
+          <img src="spotifycover.jpg">
+          <div class="card-content">
+            <h3>Karya 8</h3>
+          </div>
         </div>
       </div>
-
       <div id="modal" class="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
           <img id="modalImage" src="" alt="">
           <h2 id="modalTitle"></h2>
           <p id="modalDesc"></p>
-          <button onclick="closeModal()">Close</button>
+          <button onclick="closeModal()">Tutup</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out through my social media or email!</p>
-      <p>Email: <a href="mailto:michelle@example.com">michelle@example.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></p>
-    </div>
-  </section>
-
   <script>
     const data = [
-      { title: "Artwork 1", image: "ai hoshino.jpg", description: "It took me ages to draw this." },
-      { title: "Artwork 2", image: "tomasalpaedisong.jpg", description: "Still trying to improve on realism." },
-      { title: "Artwork 3", image: "harassment is not a compliment.jpg", description: "Schoolwork novel cover." }
+      { title: "Karya 1", image: "ai hoshino.jpg", description: "Perlu waktu lama untuk menggambar ini" },
+      { title: "Karya 2", image: "tomasalpaedisong.jpg", description: "Masih belajar realisme" },
+      { title: "Karya 3", image: "harassment is not a compliment.jpg", description: "Untuk sampul novel tugas sekolah" },
+      { title: "Karya 4", image: "micia1.jpg", description: "Dibuat untuk sahabatku" },
+      { title: "Karya 5", image: "yoimiya.jpg", description: "Karya lama" },
+      { title: "Karya 6", image: "harris hbd2.jpg", description: "Dibuat untuk teman" },
+      { title: "Karya 7", image: "COMMS 3 amore bonus.jpg", description: "Komisi pertama saya" },
+      { title: "Karya 8", image: "spotifycover.jpg", description: "Cover playlist pribadi" },
     ];
 
     function openModal(index) {
@@ -97,6 +129,5 @@
       document.getElementById("modal").style.display = "none";
     }
   </script>
-<script src="script.js"></script>
 </body>
 </html>
